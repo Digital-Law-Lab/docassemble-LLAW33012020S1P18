@@ -4,7 +4,7 @@ objects:
 ---
 Features:
   css: nav_bar.css
-  debug: false
+  debug: True
   hide standard menu: true
 ---
 default screen parts:
@@ -21,7 +21,7 @@ default screen parts:
 ---
 metadata:
   title: |
-   Preparing for your NDIS Planning Meeting
+   Preparing for your NDIS Planning Meeting Meeting
   authors:
     - name: Ashleigh Mcnichol
     - name: Ayat Hatem
@@ -288,9 +288,9 @@ question: Tell us about your home. Write about who you live with.
 subquestion: |
   Tell us:
 
-  - who do you live with?
-  - what do you like about your home?
-  - what could make living in your home easier?
+  - Who do you live with?
+  - What do you like about your home?
+  - What could make living in your home easier?
 fields: 
   - no label: ASAhome
     input type: area
@@ -326,18 +326,15 @@ subquestion: |
 
   For example:
   
-  - do you go to the hairdresser?
-  - do you visit friends who live far away?
+  - Do you go to the hairdresser?
+  - Do you visit friends who live far away?
 fields: 
   - no label: ASAsometimes
     input type: area  
 ---
-question: Tell about what fun things you like to do. 
+question: What are some things you like to? 
 subquestion: |
-  For example, you might like gardening, going to class, being with friends. 
-  There is no wrong answer. 
-
-  Do you find it difficult to do the things you like?  Tell us about that.
+  Tell us how your disability makes it harder to have fun.
 fields: 
   - no label: ASAlikes
     input type: area
@@ -358,14 +355,14 @@ code: |
   community_involvement.appendObject()
   community_involvement.appendObject()
 ---
-question: Tell us about what you do for fun outside your home
+question: Fun things to do when you go out
 subquestion: | 
-  - What do you do for fun when you go out?
-  - What do you do in your community?
+  Tell us some fun things you do when you go out.
+  Tell us about what you do in your neighbourhood.
   
-  You can write about as many things as you want, click the [FILE another.PNG] button to add more.
+  Click the [FILE another.PNG] button to add more interests.
 fields: 
-  - Activity: community_involvement[i].name.text 
+  - Interest: community_involvement[i].name.text 
     choices: 
     - Exercise and Sports
     - Volunteering  
@@ -374,9 +371,9 @@ fields:
     - Library
     - Going to the Movies 
     - Classes
-    - Other Activities
+    - Other Interests
     required: false
-  - Write about it here: community_involvement[i].info
+  - Write about it: community_involvement[i].info
     input type: area
     required: false
 list collect:
@@ -384,11 +381,11 @@ list collect:
   is final: False
   allow delete: False
   label: |
-    Please enter information about your community involvement.
+    Tell us some group interests you are in.
 
 Section: Community Involvement 
 ---
-question: Do you want to add any more activities?
+question: Do you want to add any more interests?
 yesno: community_involvement.there_is_another
 ---
 table: com_involvement_table
